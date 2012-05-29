@@ -1,7 +1,7 @@
 import os
 import codecs
 import re
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 def read(*parts):
@@ -26,7 +26,9 @@ setup(
     author_email='gsiegman@gsiegman.com',
     license='MIT',
     url='https://github.com/gsiegman/django-paintstore',
-    packages=['paintstore',],
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe = False,
     classifiers=[
         "Development Status :: 4 - Beta",
         'Environment :: Web Environment',
