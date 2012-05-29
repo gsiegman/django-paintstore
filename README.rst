@@ -19,19 +19,19 @@ Quickstart
         )
 
 #. Add a ColorPickerField to your model::
-		
-		# ...
-		from paintstore.fields import ColorPickerField
+        
+        # ...
+        from paintstore.fields import ColorPickerField
 
-		class ColorfulModel(models.Model):
-			title = models.CharField(max_length=25)
-			color = ColorPickerField()
+        class ColorfulModel(models.Model):
+            title = models.CharField(max_length=25)
+            color = ColorPickerField()
 
 #. Optional: Edit colors directly in your model's change list admin::
 
-		class ColorfulModelAdmin(admin.ModelAdmin):
-			list_display = ["title", "color",]
-			list_editable = ["color",]
+        class ColorfulModelAdmin(admin.ModelAdmin):
+            list_display = ["title", "color",]
+            list_editable = ["color",]
 
 
 .. _`jQuery ColorPicker`: https://github.com/Belelros/jQuery-ColorPicker
