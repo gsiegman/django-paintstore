@@ -34,4 +34,11 @@ Quickstart
             list_editable = ["color",]
 
 
+TODOS
+--------
+
+- Replace text input showing color hex code with a swatch of the color selected
+- Docs (prep to add to Read the Docs)
+- Tests
+
 .. _`jQuery ColorPicker`: https://github.com/Belelros/jQuery-ColorPicker
