@@ -12,3 +12,10 @@ class ColorPickerField(CharField):
     def formfield(self, **kwargs):
         kwargs.update({"widget": ColorPickerWidget})
         return super(ColorPickerField, self).formfield(**kwargs)
+
+
+try:
+    from south.modelsinspector import add_introspection_rules
+    add_introspection_rules([], ["^paintstore\.fields\.ColorPickerField"])
+except ImportError:
+    pass
