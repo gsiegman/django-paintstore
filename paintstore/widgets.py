@@ -5,11 +5,11 @@ from django.utils.safestring import mark_safe
 
 class ColorPickerWidget(forms.TextInput):
     class Media:
-        css = { "all": ("%s/%s" %  settings.STATIC_URL, "paintstore/css/colorpicker.css",)
-        }
+        css = { "all": ("%s/%s" %  (settings.STATIC_URL, "paintstore/css/colorpicker.css",)
+        )}
         
         js  = (
-            "%s/%s" % settings.STATIC_URL,  "paintstore/colorpicker.js",
+            "%s/%s" % (settings.STATIC_URL,  "paintstore/colorpicker.js",)
         )
 
     input_type = 'colorpicker'
