@@ -10,7 +10,7 @@ class ColorPickerWidget(forms.TextInput):
         }
         
         js  = (
-            "%s/%s" % (settings.STATIC_URL,  "paintstore/colorpicker.js"),
+            "%s/%s" % (settings.STATIC_URL,  "paintstore/colorpicker.js", "paintstore/jquery_1.7.2.js"),
         )
 
     input_type = 'colorpicker'
