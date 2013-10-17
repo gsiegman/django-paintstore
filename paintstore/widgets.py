@@ -5,15 +5,15 @@ from django.utils.safestring import mark_safe
 
 class ColorPickerWidget(forms.TextInput):
     class Media:
-        css = {
-            "all": ("paintstore/css/colorpicker.css",)
+        css = { 
+            "all": ("%s/%s" %  (settings.STATIC_URL, "paintstore/css/colorpicker.css"),)
         }
         
         js  = (
-            "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js", 
-            "paintstore/colorpicker.js",
+                 ("%s/%s" % (settings.STATIC_URL, "paintstore/jquery_1.7.2.js")),
+                 ("%s/%s" % (settings.STATIC_URL, "paintstore/colorpicker.js"))
         )
-
+        
     input_type = 'colorpicker'
 
     def render(self, name, value, attrs=None):
