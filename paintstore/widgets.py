@@ -18,21 +18,23 @@ class ColorPickerWidget(forms.TextInput):
 
     def render(self, name, value, attrs=None):
         script = u"""<script type='text/javascript'>
-                        $(document).ready(function(){
-                            $('#%s').ColorPicker({
-                                onSubmit: function(hsb, hex, rgb, el, parent) {
+                        $(document).ready(function(){{
+                            $('#{0}').ColorPicker({{
+                                onSubmit: function(hsb, hex, rgb, el, parent) {{
                                     $(el).val('#' + hex);
                                     $(el).ColorPickerHide();
-                                },
-                                onBeforeShow: function () {
+                                    $('#{0}').css('background-color', '#' + hex);
+                                }},
+                                onBeforeShow: function () {{
                                     $(this).ColorPickerSetColor(this.value);
-                                }
-                            }).bind('keyup', function(){
+                                }}
+                            }}).bind('keyup', function(){{
                                 $(this).ColorPickerSetColor(this.value.replace('#', ''));
-                            });
-                        });
+                            }});
+                            $('#{0}').css('background-color', $('#{0}').val());
+                        }});
                     </script>
-                    """ % ("id_%s" % name,)
+                    """.format(u'id_'+name)
 
         super_render = super(ColorPickerWidget, self).render(name, value, attrs)
         return mark_safe(u"%s%s" % (super_render, script))
