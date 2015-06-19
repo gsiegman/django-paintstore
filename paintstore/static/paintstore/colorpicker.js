@@ -416,6 +416,7 @@
 						setSelector(options.color, cal.get(0));
 						setCurrentColor(options.color, cal.get(0));
 						setNewColor(options.color, cal.get(0));
+						// debugger;
 						if (options.flat) {
 							cal.css({
 								position: 'relative',
@@ -474,4 +475,4 @@
 		ColorPickerShow: ColorPicker.showPicker,
 		ColorPickerSetColor: ColorPicker.setColor
 	});
-})(jQuery);
+}(jQuery));
