@@ -1,17 +1,18 @@
 from django import forms
 from django.conf import settings
 from django.utils.safestring import mark_safe
+from django.contrib.staticfiles.storage import staticfiles_storage
 
 
 class ColorPickerWidget(forms.TextInput):
     class Media:
         css = {
-            "all": ("%s/%s" % (settings.STATIC_URL, "paintstore/css/colorpicker.css"),)
+            "all": (staticfiles_storage.url("paintstore/css/colorpicker.css"),),
         }
 
-        js  = (
-            ("%s/%s" % (settings.STATIC_URL, "paintstore/jquery_1.7.2.js")),
-            ("%s/%s" % (settings.STATIC_URL, "paintstore/colorpicker.js"))
+        js = (
+            staticfiles_storage.url("paintstore/jquery_1.7.2.js"),
+            staticfiles_storage.url("paintstore/colorpicker.js")
         )
 
     input_type = 'colorpicker'
