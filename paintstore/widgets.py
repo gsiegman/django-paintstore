@@ -16,7 +16,7 @@ class ColorPickerWidget(forms.TextInput):
 
     input_type = 'colorpicker'
 
-    def render(self, name, value, attrs=None):
+    def render(self, name, value, attrs=None, renderer=None):
         script = u"""<script type='text/javascript'>
                         $(document).ready(function(){
                             $('#%s').ColorPicker({
